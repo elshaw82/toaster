@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    position: relative;
+    top:-30px;
+    font-family: 'Notable', sans-serif;
+    font-size: 24px;
+    z-index: 1;
+    color:antiquewhite;
+    letter-spacing: 2px;
+}
+
+.container {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:100vw;
+    height:100vh;
+    background-color:antiquewhite;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+.toast {
+    position: absolute;
+    top:100px;
+    width:360px;
+    height:250px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    border:solid 15px rgb(224, 193, 171);
+    background-color: rgb(255, 217, 190);
+}
+
+
+
+.toaster {
+    position: absolute;
+    width:500px;
+    height:300px;
+    background-color:#66b4a3;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.toaster::before {
+    content:"";
+    width:5px;
+    height:100px;
+    background-color: rgba(241, 241, 241, 0.5);
+    display: block;
+    position: relative;
+    left:440px;
+    top:60px;
+    border-radius: 20px;
+}
+
+.toaster::after {
+    display:block;
+    content: " ";
+    width:530px;
+    height:50px;
+    background-color: burlywood;
+    position: relative;
+    top:90px;
+    right:15px;
+    border-top-left-radius:20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 2px 10px #7c7c7c;
+}
+
+.dial {
+    position: relative;
+    left:400px;
+    top:80px;
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: cadetblue 2px 10px 10px, -2px -10px 10px cadetblue;
+}
+
+.lever {
+    position: relative;
+    top:20px;
+    left:480px;
+    width:60px;
+    height:20px;
+    background-image: linear-gradient(45deg, #797979, #9e9e9e);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.make-toast {
+    animation: levermove 1s ease forwards;
+}
+
+.toast-me {
+    animation: maketoast 1s linear forwards;
+}
+
+.done {
+    animation: toastready 1s ease-in;
+}
+
+
+/* animations */
+
+@keyframes levermove {
+    0% {top:20px;}
+    100% {top:120px; transform:rotate(15deg);}
+}
+
+@keyframes maketoast {
+    0% {top: 100px;}
+    100% {top:200px;}   
+}
+
+@keyframes toastready {
+    0% {top:200px;}
+    50% {top:-200px; transform: rotate(25deg);}
+    80% {top:-100px; transform:rotate(-25deg);}
+    100% {top:100px; transform:rotate(25deg);}
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+    h1 {
+        font-size: 14px;
+    }
+
+    .toast {
+        position: absolute;
+        top:500px;
+        width:200px;
+        height:180px;
+    }
+
+   .toaster {
+    width:300px;
+    height:200px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+   }
+
+   .toaster::before {
+    content:"";
+    width:5px;
+    height:30px;
+    background-color: rgba(241, 241, 241, 0.5);
+    display: block;
+    position: relative;
+    left:270px;
+    top:60px;
+    border-radius: 20px;
+}
+
+.toaster::after {
+    display:block;
+    content: " ";
+    width:325px;
+    height:30px;
+    position: relative;
+    top:95px;
+    right:10px;  
+}
+
+.dial {
+    position: relative;
+    left:240px;
+    top:70px;
+    width:40px;
+    height:40px;
+}
+
+.lever {
+    position: relative;
+    top:20px;
+    left:270px;
+    width:50px;
+    height:15px;
+}
+
+@keyframes maketoast {
+    0% {top: 500px;}
+    100% {top:600px;}   
+}
+
+@keyframes toastready {
+    0% {top:500px;}
+    50% {top:-200px; transform: rotate(25deg);}
+    80% {top:-300px; transform:rotate(-25deg);}
+    100% {top:500px; transform:rotate(25deg);}
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 14px;
+    }
+
+    .toast {
+        position: absolute;
+        top:150px;
+        width:200px;
+        height:180px;
+    }
+
+   .toaster {
+    width:300px;
+    height:200px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+   }
+
+   .toaster::before {
+    content:"";
+    width:5px;
+    height:30px;
+    background-color: rgba(241, 241, 241, 0.5);
+    display: block;
+    position: relative;
+    left:270px;
+    top:60px;
+    border-radius: 20px;
+}
+
+.toaster::after {
+    display:block;
+    content: " ";
+    width:325px;
+    height:30px;
+    position: relative;
+    top:95px;
+    right:10px;  
+}
+
+.dial {
+    position: relative;
+    left:240px;
+    top:70px;
+    width:40px;
+    height:40px;
+}
+
+.lever {
+    position: relative;
+    top:20px;
+    left:270px;
+    width:50px;
+    height:15px;
+}
+
+@keyframes maketoast {
+    0% {top: 150px;}
+    100% {top:300px; height:60px;}   
+}
+
+@keyframes toastready {
+    0% {top:200px;}
+    50% {top:-200px; transform: rotate(25deg);}
+    80% {top:-100px; transform:rotate(-25deg);}
+    100% {top:100px; transform:rotate(25deg);}
+}
+
+
+}
